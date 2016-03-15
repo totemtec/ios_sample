@@ -25,10 +25,10 @@
     
     
     self.array = @[
-                   @"In your UITableViewCell subclass, add constraints so that the subviews of the cell have their edges pinned to the edges of the cell's contentView (most importantly to the top AND bottom edges)",
-                   @"NOTE: don't pin subviews to the cell itself; only to the cell's contentView! ",
-                   @"Getting your constraints right is definitely the hardest and most important part of getting dynamic cell heights working with Auto Layout.",
-                   @"2. Determine Unique Table View Cell Reuse Identifiers",
+                   @"必须: 约束UILabel相对于contentView的左边距，右边距，上边距，下边距",
+                   @"必须: self.tableView.rowHeight = UITableViewAutomaticDimension;",
+                   @"必须: self.tableView.estimatedRowHeight = 44.0;",
+                   @"可选：约束UILabel高度<=90，优先级高一些，否则会冲突",
                    @"Do not add cells with completely different sets of constraints to the same reuse pool (i.e. use the same reuse identifier) and then attempt to remove the old constraints and set up new constraints from scratch after each dequeue. The internal Auto Layout engine is not designed to handle large scale changes in constraints, and you will see massive performance issues.",
                    @"For iOS 8 - Self-Sizing Cells 3. Enable Row Height Estimation",
                    @"self.tableView.rowHeight = UITableViewAutomaticDimension; \nself.tableView.estimatedRowHeight = 44.0;",
@@ -43,7 +43,8 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.array.count;
 }
 
@@ -51,7 +52,7 @@
 {
     MyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.array[indexPath.row];
+    cell.contentLabel.text = self.array[indexPath.row];
     
     return cell;
 }

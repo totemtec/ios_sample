@@ -10,6 +10,6 @@
 
 @interface MyCell : UITableViewCell
 
-@property(nonatomic, strong) IBOutlet UILabel *textLabel;
+@property(nonatomic, strong) IBOutlet UILabel *contentLabel;
 
 @end

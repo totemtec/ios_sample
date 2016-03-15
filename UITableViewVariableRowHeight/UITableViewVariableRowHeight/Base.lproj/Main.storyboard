@@ -23,9 +23,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXj-fm-wZs">
-                                            <rect key="frame" x="20" y="8" width="341" height="21"/>
+                                            <rect key="frame" x="28" y="8" width="319" height="21"/>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            </accessibility>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="GsR-hp-nxa"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" priority="900" constant="90" id="XAS-uW-vG7"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -34,13 +38,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="HXj-fm-wZs" firstAttribute="leading" secondItem="1TN-wU-h4Y" secondAttribute="leadingMargin" constant="20" id="9J1-Oj-lP9"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="HXj-fm-wZs" secondAttribute="bottom" constant="10" id="ESu-es-XDZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="HXj-fm-wZs" secondAttribute="bottom" id="ESu-es-XDZ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="HXj-fm-wZs" secondAttribute="trailing" constant="20" id="F9K-zC-ml3"/>
-                                        <constraint firstItem="HXj-fm-wZs" firstAttribute="top" secondItem="1TN-wU-h4Y" secondAttribute="topMargin" constant="10" id="P1B-Ox-W6c"/>
+                                        <constraint firstItem="HXj-fm-wZs" firstAttribute="top" secondItem="1TN-wU-h4Y" secondAttribute="topMargin" id="P1B-Ox-W6c"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="textLabel" destination="HXj-fm-wZs" id="Sim-Vu-20j"/>
+                                    <outlet property="contentLabel" destination="HXj-fm-wZs" id="pqs-KN-uTl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
