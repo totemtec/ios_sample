@@ -19,19 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRw-PP-QkX" customClass="UIVerticalButton">
-                                <rect key="frame" x="6" y="80" width="149" height="149"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="eRw-PP-QkX" secondAttribute="height" multiplier="1:1" priority="750" id="mdM-XY-ayE"/>
-                                </constraints>
-                                <state key="normal" title="图腾泰科" image="logo">
-                                    <color key="titleColor" red="0.11021153390000001" green="0.615088933" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.053190715079999999" green="0.3965822161" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUo-pr-TZe">
                                 <rect key="frame" x="165" y="80" width="149" height="149"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,6 +30,19 @@
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" red="0.11021153390000001" green="0.615088933" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRw-PP-QkX" customClass="TTVerticalButton">
+                                <rect key="frame" x="8" y="80" width="149" height="149"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eRw-PP-QkX" secondAttribute="height" multiplier="1:1" priority="750" id="mdM-XY-ayE"/>
+                                </constraints>
+                                <state key="normal" title="图腾泰科" image="logo">
+                                    <color key="titleColor" red="0.11021153390000001" green="0.615088933" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.053190715079999999" green="0.3965822161" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>

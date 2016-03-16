@@ -1,5 +1,5 @@
 //
-//  UIVerticalButton.h
+//  TTVerticalButton.h
 //  UIButtonVertical
 //
 //  Created by majianglin on 3/16/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIVerticalButton : UIButton
+@interface TTVerticalButton : UIButton
 
 @end

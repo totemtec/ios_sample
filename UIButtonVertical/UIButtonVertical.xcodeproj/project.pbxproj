@@ -12,7 +12,7 @@
 		464908591C990A0D005A6F94 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 464908581C990A0D005A6F94 /* ViewController.m */; };
 		4649085C1C990A0D005A6F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4649085A1C990A0D005A6F94 /* Main.storyboard */; };
 		464908691C990A3C005A6F94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464908681C990A3C005A6F94 /* Assets.xcassets */; };
-		4649086C1C9911F7005A6F94 /* UIVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4649086B1C9911F7005A6F94 /* UIVerticalButton.m */; };
+		4649086C1C9911F7005A6F94 /* TTVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4649086B1C9911F7005A6F94 /* TTVerticalButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +25,8 @@
 		4649085B1C990A0D005A6F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		464908621C990A0D005A6F94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464908681C990A3C005A6F94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4649086A1C9911F7005A6F94 /* UIVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIVerticalButton.h; sourceTree = "<group>"; };
-		4649086B1C9911F7005A6F94 /* UIVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIVerticalButton.m; sourceTree = "<group>"; };
+		4649086A1C9911F7005A6F94 /* TTVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTVerticalButton.h; sourceTree = "<group>"; };
+		4649086B1C9911F7005A6F94 /* TTVerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTVerticalButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +61,8 @@
 			children = (
 				464908541C990A0D005A6F94 /* AppDelegate.h */,
 				464908551C990A0D005A6F94 /* AppDelegate.m */,
-				4649086A1C9911F7005A6F94 /* UIVerticalButton.h */,
-				4649086B1C9911F7005A6F94 /* UIVerticalButton.m */,
+				4649086A1C9911F7005A6F94 /* TTVerticalButton.h */,
+				4649086B1C9911F7005A6F94 /* TTVerticalButton.m */,
 				464908571C990A0D005A6F94 /* ViewController.h */,
 				464908581C990A0D005A6F94 /* ViewController.m */,
 				4649085A1C990A0D005A6F94 /* Main.storyboard */,
@@ -151,7 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				464908591C990A0D005A6F94 /* ViewController.m in Sources */,
-				4649086C1C9911F7005A6F94 /* UIVerticalButton.m in Sources */,
+				4649086C1C9911F7005A6F94 /* TTVerticalButton.m in Sources */,
 				464908561C990A0D005A6F94 /* AppDelegate.m in Sources */,
 				464908531C990A0D005A6F94 /* main.m in Sources */,
 			);

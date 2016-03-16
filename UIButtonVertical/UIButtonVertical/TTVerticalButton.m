@@ -1,18 +1,18 @@
 //
-//  UIVerticalButton.m
+//  TTVerticalButton.m
 //  UIButtonVertical
 //
 //  Created by majianglin on 3/16/16.
 //  Copyright © 2016 TOTEM. All rights reserved.
 //
 
-#import "UIVerticalButton.h"
+#import "TTVerticalButton.h"
 
 #define kTextLabelWidthMax   300
 #define kTextTopPadding 20
 
 
-@implementation UIVerticalButton
+@implementation TTVerticalButton
 
 /*
 // Only override drawRect: if you perform custom drawing.
