@@ -26,7 +26,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Row %ld", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"Page %ld, Row %ld", self.index, indexPath.row];
     
     return cell;
 }

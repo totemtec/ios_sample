@@ -25,11 +25,12 @@
     
     self.pageTitles = @[@"最新", @"热门", @"我的", @"你的", @"他的"];
     
-    int i = 0;
-    for (NSString *string in self.pageTitles)
+    for (int i = 0; i < self.pageTitles.count; i++)
     {
+        NSString *string = self.pageTitles[i];
+        
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        button.frame = CGRectMake(10 + 80*i++, 3, 70, 40);
+        button.frame = CGRectMake(10 + 80*i, 3, 70, 40);
         button.tag = i;
         [button addTarget:self action:@selector(gotoPage:) forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:string forState:UIControlStateNormal];
@@ -68,28 +69,37 @@
 - (void)gotoPage:(id)sender
 {
     UIButton *button = (UIButton*)sender;
+    NSLog(@"title: %@", button.titleLabel.text);
     
     ContentViewController *oldViewController = (ContentViewController *)[self.pageViewController.viewControllers objectAtIndex:0];
-    
     NSUInteger pageIndex = oldViewController.index;
     
     UIPageViewControllerNavigationDirection direction = UIPageViewControllerNavigationDirectionForward;
     
-    if (button.tag <= pageIndex)
+    if (button.tag == pageIndex)
+    {
+        return;
+    }
+    else if(button.tag < pageIndex)
     {
         direction = UIPageViewControllerNavigationDirectionReverse;
     }
     
-    ContentViewController *viewController = [self viewControllerAtIndex:pageIndex];
+    ContentViewController *viewController = [self viewControllerAtIndex:button.tag];
     
-    if (viewController == nil) {
+    if (viewController == nil)
+    {
         return;
     }
+    
+    __weak RootViewController *weakSelf = self;
     
     [self.pageViewController setViewControllers:@[viewController]
                                   direction:direction
                                    animated:YES
-                                 completion:nil];
+                                 completion:^(BOOL finished) {
+                                     [weakSelf resetHighlightForIndex:button.tag];
+                                 }];
     
 }
 
@@ -156,13 +166,22 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers
 {
-    ContentViewController *content = (ContentViewController *)pendingViewControllers.lastObject;
+}
+
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    ContentViewController *content = (ContentViewController *)pageViewController.viewControllers.lastObject;
     NSLog(@"%ld", content.index);
     
+    [self resetHighlightForIndex:content.index];
+}
+
+- (void)resetHighlightForIndex:(NSInteger)index
+{
     for (int i = 0; i < self.scrollView.subviews.count; i++)
     {
         UIButton *button = [self.scrollView.subviews objectAtIndex:i];
-        if (i == content.index)
+        if (i == index)
         {
             [button setBackgroundColor:[UIColor redColor]];
         }
