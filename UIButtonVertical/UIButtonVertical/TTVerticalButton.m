@@ -6,10 +6,11 @@
 //  Copyright © 2016 TOTEM. All rights reserved.
 //
 
+// Ref: http://stackoverflow.com/questions/4201959/label-under-image-in-uibutton
+
 #import "TTVerticalButton.h"
 
-#define kTextLabelWidthMax   300
-#define kTextTopPadding 20
+#define kTextTopPadding 10
 
 
 @implementation TTVerticalButton
@@ -27,7 +28,15 @@
     [super layoutSubviews];
     
     CGRect titleLabelFrame = self.titleLabel.frame;
-    CGSize labelSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font constrainedToSize:CGSizeMake(self.frame.size.width, kTextLabelWidthMax) lineBreakMode:NSLineBreakByWordWrapping];
+//    CGSize labelSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font constrainedToSize:CGSizeMake(self.frame.size.width, self.frame.size.height/2) lineBreakMode:NSLineBreakByWordWrapping];
+    
+    CGRect rect = [self.titleLabel.text boundingRectWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height/2)
+                                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                                       attributes:@{NSFontAttributeName:self.titleLabel.font}
+                                                          context:nil];
+    
+    CGSize labelSize = rect.size;
+    
     
     CGRect imageFrame = self.imageView.frame;
     
