@@ -25,6 +25,15 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+    return [super tableView:tableView heightForRowAtIndexPath:newIndexPath];
+}
+
+
 
 
 @end
