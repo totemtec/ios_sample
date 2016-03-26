@@ -52,7 +52,17 @@
 {
     MyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyCell" forIndexPath:indexPath];
     
-    cell.contentLabel.text = self.array[indexPath.row];
+    //Plain Text
+//    cell.contentLabel.text = self.array[indexPath.row];
+    
+    //Attributed Text
+    NSString *text = self.array[indexPath.row];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = 10;
+    NSDictionary *attributes = @{NSParagraphStyleAttributeName:paragraphStyle};
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text attributes:attributes];
+    cell.contentLabel.attributedText = attributedText;
+    
     
     return cell;
 }
