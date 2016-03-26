@@ -24,6 +24,9 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zM-Pb-xqW">
                                             <rect key="frame" x="10" y="10" width="300" height="23.5"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="68" id="nOE-Oc-8VX"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -38,6 +41,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="contentLabel" destination="2zM-Pb-xqW" id="OrV-VL-sgU"/>
+                                    <outlet property="contentLabelHeightConstraint" destination="nOE-Oc-8VX" id="twh-Dc-8BA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
