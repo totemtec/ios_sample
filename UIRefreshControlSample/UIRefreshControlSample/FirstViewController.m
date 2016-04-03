@@ -10,7 +10,12 @@
 
 @interface FirstViewController ()
 {
-    BOOL needAutoRefresh;
+    NSUInteger _pageIndex;
+    NSUInteger _pageSize;
+    
+    BOOL _needAutoRefresh;
+    BOOL _loading;
+    BOOL _hasMore;
 }
 
 @property(nonatomic, strong) NSMutableArray *array;
@@ -24,18 +29,13 @@
 {
     [super viewDidLoad];
     
+    _pageSize = 40;
+    
     self.array = [NSMutableArray array];
-    
-    for (int i = 0; i < 50; i++)
-    {
-        [self.array addObject:[NSString stringWithFormat:@"Row %i", i]];
-    }
-    
-    [self.tableView reloadData];
 
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     
-    needAutoRefresh = YES;
+    _needAutoRefresh = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -45,37 +45,60 @@
     [self autoRefresh:nil];
 }
 
+
+- (void)doneLoadData
+{
+    _loading = NO;
+    
+    [self.tableView reloadData];
+    
+    [self.refreshControl endRefreshing];
+}
+
+- (void)loadDataForPage:(NSUInteger)page
+{
+    _loading = YES;
+
+    if (page == 1)
+    {
+        [self.array removeAllObjects];
+    }
+    
+    NSUInteger count = self.array.count;
+    
+    for (NSUInteger i = count; i < count + _pageSize; i++)
+    {
+        [self.array addObject:[NSString stringWithFormat:@"Row %ld", i]];
+    }
+    
+    _hasMore = self.array.count < 100;
+    NSLog(@"loadDataForPage: %ld, _hasMore = %i", page, _hasMore);
+    
+    [self performSelector:@selector(doneLoadData) withObject:nil afterDelay:1.5];
+}
+
 - (void)refresh:(id)sender
 {
-    [self performSelector:@selector(refreshFinish:) withObject:nil afterDelay:1];
+    _pageIndex = 1;
+    [self loadDataForPage:_pageIndex];
 }
 
 - (void)autoRefresh:(id)sender
 {
-    if (needAutoRefresh)
+    if (_needAutoRefresh)
     {
         self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height);
         [self.refreshControl beginRefreshing];
         
         [self refresh:nil];
         
-        needAutoRefresh = NO;
+        _needAutoRefresh = NO;
     }
 }
-
-- (void)refreshFinish:(id)sender
-{
-    [self.refreshControl endRefreshing];
-}
-
 
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -92,5 +115,15 @@
     return cell;
 }
 
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_hasMore && !_loading && indexPath.row > self.array.count-_pageSize/3)
+    {
+        _pageIndex++;
+        [self loadDataForPage:_pageIndex];
+    }
+}
 
 @end
