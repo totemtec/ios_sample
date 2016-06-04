@@ -27,7 +27,11 @@
 //    [UINavigationBar.appearance setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
 //    UINavigationBar.appearance.shadowImage = [UIImage imageNamed:@"nav_shadow"];
     
-    
+    //隐藏返回的标题，只是隐藏，不是去掉
+    //如果返回的标题过长，会造成详情页的标题被顶到右边，所以需要把返回标题设置的短一些
+    //方案0: 使用UITableViewController，返回标题是"Back"或"返回"
+    //方案1: StoryBoard上设置前一个ViewController的导航栏的Back Button标题，叫"Back"或"返回"都行
+    //方案2: self.navigationController.navigationBar.topItem.title = @"";
     UINavigationBar.appearance.tintColor = [UIColor whiteColor];
     [UIBarButtonItem.appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                        forBarMetrics:UIBarMetricsDefault];
