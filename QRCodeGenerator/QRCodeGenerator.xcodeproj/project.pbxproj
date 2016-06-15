@@ -13,6 +13,10 @@
 		4644A9D51D110AD100B2D493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4644A9D31D110AD100B2D493 /* Main.storyboard */; };
 		4644A9D71D110AD100B2D493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4644A9D61D110AD100B2D493 /* Assets.xcassets */; };
 		4644A9DA1D110AD100B2D493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4644A9D81D110AD100B2D493 /* LaunchScreen.storyboard */; };
+		4644A9F31D11280200B2D493 /* TTBarCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4644A9F21D11280200B2D493 /* TTBarCodeGenerator.m */; };
+		4644AA1B1D112BD000B2D493 /* RSCode128Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4644A9F71D112BD000B2D493 /* RSCode128Generator.m */; };
+		4644AA1F1D112BD000B2D493 /* RSCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4644AA001D112BD000B2D493 /* RSCodeGenerator.m */; };
+		4644AA2B1D112BD000B2D493 /* RSUnifiedCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4644AA181D112BD000B2D493 /* RSUnifiedCodeGenerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,15 @@
 		4644A9D61D110AD100B2D493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4644A9D91D110AD100B2D493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4644A9DB1D110AD100B2D493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4644A9F11D11280200B2D493 /* TTBarCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTBarCodeGenerator.h; sourceTree = "<group>"; };
+		4644A9F21D11280200B2D493 /* TTBarCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTBarCodeGenerator.m; sourceTree = "<group>"; };
+		4644A9F61D112BD000B2D493 /* RSCode128Generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCode128Generator.h; sourceTree = "<group>"; };
+		4644A9F71D112BD000B2D493 /* RSCode128Generator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCode128Generator.m; sourceTree = "<group>"; };
+		4644A9FE1D112BD000B2D493 /* RSCodeGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCodeGen.h; sourceTree = "<group>"; };
+		4644A9FF1D112BD000B2D493 /* RSCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCodeGenerator.h; sourceTree = "<group>"; };
+		4644AA001D112BD000B2D493 /* RSCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCodeGenerator.m; sourceTree = "<group>"; };
+		4644AA171D112BD000B2D493 /* RSUnifiedCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUnifiedCodeGenerator.h; sourceTree = "<group>"; };
+		4644AA181D112BD000B2D493 /* RSUnifiedCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUnifiedCodeGenerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +71,13 @@
 		4644A9C91D110AD100B2D493 /* QRCodeGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				4644A9F41D112BD000B2D493 /* RSBarcodes-iOS7 */,
 				4644A9CD1D110AD100B2D493 /* AppDelegate.h */,
 				4644A9CE1D110AD100B2D493 /* AppDelegate.m */,
 				4644A9D01D110AD100B2D493 /* ViewController.h */,
 				4644A9D11D110AD100B2D493 /* ViewController.m */,
+				4644A9F11D11280200B2D493 /* TTBarCodeGenerator.h */,
+				4644A9F21D11280200B2D493 /* TTBarCodeGenerator.m */,
 				4644A9D31D110AD100B2D493 /* Main.storyboard */,
 				4644A9D61D110AD100B2D493 /* Assets.xcassets */,
 				4644A9D81D110AD100B2D493 /* LaunchScreen.storyboard */,
@@ -77,6 +93,20 @@
 				4644A9CB1D110AD100B2D493 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4644A9F41D112BD000B2D493 /* RSBarcodes-iOS7 */ = {
+			isa = PBXGroup;
+			children = (
+				4644A9F61D112BD000B2D493 /* RSCode128Generator.h */,
+				4644A9F71D112BD000B2D493 /* RSCode128Generator.m */,
+				4644A9FE1D112BD000B2D493 /* RSCodeGen.h */,
+				4644A9FF1D112BD000B2D493 /* RSCodeGenerator.h */,
+				4644AA001D112BD000B2D493 /* RSCodeGenerator.m */,
+				4644AA171D112BD000B2D493 /* RSUnifiedCodeGenerator.h */,
+				4644AA181D112BD000B2D493 /* RSUnifiedCodeGenerator.m */,
+			);
+			path = "RSBarcodes-iOS7";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +181,11 @@
 			files = (
 				4644A9D21D110AD100B2D493 /* ViewController.m in Sources */,
 				4644A9CF1D110AD100B2D493 /* AppDelegate.m in Sources */,
+				4644AA2B1D112BD000B2D493 /* RSUnifiedCodeGenerator.m in Sources */,
+				4644AA1F1D112BD000B2D493 /* RSCodeGenerator.m in Sources */,
 				4644A9CC1D110AD100B2D493 /* main.m in Sources */,
+				4644A9F31D11280200B2D493 /* TTBarCodeGenerator.m in Sources */,
+				4644AA1B1D112BD000B2D493 /* RSCode128Generator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +336,7 @@
 				4644A9E01D110AD100B2D493 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
