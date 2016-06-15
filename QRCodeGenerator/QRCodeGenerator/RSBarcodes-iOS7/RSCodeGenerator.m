@@ -56,7 +56,10 @@ NSString *const DIGITS_STRING = @"0123456789";
     // Bottom spacing       = 2
     // Left & right spacing = 2
     // Height               = 28
+    
+    int multiple = 4;
     CGSize size = CGSizeMake(code.length + 4, 28);
+    size = CGSizeMake(size.width * multiple, size.height * multiple);
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
@@ -74,13 +77,13 @@ NSString *const DIGITS_STRING = @"0123456789";
     [self.strokeColor setStroke];
     
     CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height));
-    CGContextSetLineWidth(context, 1);
+    CGContextSetLineWidth(context, 1 * multiple);
     
     for (int i = 0; i < code.length; i++) {
         NSString *character = [code substringWithRange:NSMakeRange(i, 1)];
         if ([character isEqualToString:@"1"]) {
-            CGContextMoveToPoint(context, i + (2 + 1), 1.5);
-            CGContextAddLineToPoint(context, i + (2 + 1), size.height - 2);
+            CGContextMoveToPoint(context, (i + (2 + 1)) * multiple, 1.5);
+            CGContextAddLineToPoint(context, (i + (2 + 1)) * multiple, size.height - 2);
         }
     }
     CGContextDrawPath(context, kCGPathFillStroke);
