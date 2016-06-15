@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jI9-Qp-RvM">
+                                <rect key="frame" x="150" y="60" width="300" height="262"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="262" id="H0y-oE-BtP"/>
+                                    <constraint firstAttribute="width" constant="300" id="nmS-Um-bje"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fdK-p7-phx">
+                                <rect key="frame" x="150" y="332" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="uv0-4w-5g7"/>
+                                    <constraint firstAttribute="height" constant="100" id="wxH-s5-7zx"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fdK-p7-phx" firstAttribute="top" secondItem="jI9-Qp-RvM" secondAttribute="bottom" constant="10" id="0fn-zx-pDw"/>
+                            <constraint firstItem="jI9-Qp-RvM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="90B-Mq-Lsg"/>
+                            <constraint firstItem="jI9-Qp-RvM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="BO6-bW-mdl"/>
+                            <constraint firstItem="fdK-p7-phx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RXo-8X-Cq0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barCodeView" destination="fdK-p7-phx" id="EoO-Cx-Hg8"/>
+                        <outlet property="qrCodeView" destination="jI9-Qp-RvM" id="D6n-aa-GUc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="389"/>
+        </scene>
+    </scenes>
+</document>
